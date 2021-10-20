@@ -4,9 +4,12 @@ import { useCartContext } from "../context/cart_context";
 import { useUserContext } from "../context/user_context";
 import { formatPrice } from "../utils/helpers";
 import { Link } from "react-router-dom";
+import { GiButtonFinger } from "react-icons/gi";
 
 const CartTotals = () => {
   const { total_amount, shipping_fee } = useCartContext();
+  const { loggedUser, loginWithRedirect } = useUserContext();
+
   return (
     <Wrapper>
       <div>
@@ -22,9 +25,15 @@ const CartTotals = () => {
             order total <span>{formatPrice(total_amount + shipping_fee)}</span>{" "}
           </h4>
         </article>
-        <Link to="/checkout" className="btn">
-          Checkout
-        </Link>
+        {loggedUser ? (
+          <Link to="/checkout" className="btn">
+            Checkout
+          </Link>
+        ) : (
+          <button className="btn" onClick={loginWithRedirect}>
+            Login
+          </button>
+        )}
       </div>
     </Wrapper>
   );

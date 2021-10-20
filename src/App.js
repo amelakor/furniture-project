@@ -9,6 +9,7 @@ import {
   Home,
   Products,
   SingleProduct,
+  PrivateRoute,
 } from "./pages";
 
 function App() {
@@ -30,9 +31,9 @@ function App() {
         <Route path="/cart" exact>
           <Cart />
         </Route>
-        <Route path="/checkout" exact>
+        <PrivateRoute path="/checkout" exact>
           <Checkout />
-        </Route>
+        </PrivateRoute>
         <Route path="*">
           <Error />
         </Route>
