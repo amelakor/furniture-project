@@ -26,7 +26,9 @@ const Sidebar = () => {
             const { id, url, text } = l;
             return (
               <li key={id}>
-                <Link to={url}>{text}</Link>
+                <Link to={url} onClick={closeSidebar}>
+                  {text}
+                </Link>
               </li>
             );
           })}
