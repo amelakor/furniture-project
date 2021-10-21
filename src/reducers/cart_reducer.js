@@ -1,4 +1,3 @@
-import { FaIgloo } from "react-icons/fa";
 import {
   ADD_TO_CART,
   CLEAR_CART,
@@ -6,7 +5,6 @@ import {
   REMOVE_CART_ITEM,
   TOGGLE_CART_ITEM_AMOUNT,
 } from "../actions";
-import CartItem from "../components/CartItem";
 
 const cart_reducer = (state, action) => {
   if (action.type === ADD_TO_CART) {
