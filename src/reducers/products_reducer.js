@@ -16,7 +16,7 @@ const products_reducer = (state, action) => {
   if (action.type === SIDEBAR_CLOSE) {
     return { ...state, isSidebarOpen: false };
   }
-  if (action.tupe === GET_PRODUCTS_BEGIN) {
+  if (action.type === GET_PRODUCTS_BEGIN) {
     return { ...state, products_loading: true };
   }
   if (action.type === GET_PRODUCTS_SUCCESS) {
